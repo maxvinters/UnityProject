@@ -5,21 +5,21 @@ using UnityEngine;
 public class PatternScript : MonoBehaviour {
 
     [SerializeField]
-    GameObject player;
-    [SerializeField]
     GameObject Pointer;
-    Vector3 offset = new Vector3(-1, -2, 0);
+
+    public GameObject[] Dots;
 
 
-    void Awake()
+    void OnEnable()
     {
-        Pointer.SetActive(true);
+        transform.position = Pointer.transform.position;
     }
 	
-
-	void FixedUpdate ()
+    void OnDisable()
     {
-        transform.position = player.transform.position + offset;
-	}
+        foreach (GameObject Dot in Dots)
+            Dot.SetActive(false);
+    }
+
 
 }

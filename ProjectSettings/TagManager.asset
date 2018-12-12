@@ -7,6 +7,7 @@ TagManager:
   - Pointer
   - Dot
   - Ground
+  - Enemy
   layers:
   - Default
   - TransparentFX

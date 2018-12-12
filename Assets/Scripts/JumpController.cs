@@ -23,12 +23,6 @@ public class JumpController : MonoBehaviour {
     {
         if (rb.velocity.y < -400)
             rb.velocity = new Vector2(rb.velocity.x, -400);
-        if (Input.GetKey(KeyCode.Space) && CheckGround())
-        {
-            JumpRing.transform.localScale = new Vector3(Mathf.Lerp(JumpRing.transform.localScale.x, JumpRad, Time.deltaTime* LerpSpeed), Mathf.Lerp(JumpRing.transform.localScale.y, JumpRad, Time.deltaTime* LerpSpeed), 1);
-        }
-        else if(JumpRing.transform.localScale.x>0.001f)
-            JumpRing.transform.localScale = new Vector3(Mathf.Lerp(JumpRing.transform.localScale.x, 0f, Time.deltaTime * LerpSpeed), Mathf.Lerp(JumpRing.transform.localScale.y, 0f, Time.deltaTime * LerpSpeed), 1);
         if (Input.GetKeyUp(KeyCode.Space) && CheckGround())
         {
             float g = 4 * 9.82f;
@@ -82,4 +76,13 @@ public class JumpController : MonoBehaviour {
         else
             return false;
     }
+
+    void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.Space) && CheckGround())
+            JumpRing.transform.localScale = new Vector3(Mathf.Lerp(JumpRing.transform.localScale.x, JumpRad, Time.deltaTime * LerpSpeed), Mathf.Lerp(JumpRing.transform.localScale.y, JumpRad, Time.deltaTime * LerpSpeed), 1);
+        else if (JumpRing.transform.localScale.x > 0.001f)
+            JumpRing.transform.localScale = new Vector3(Mathf.Lerp(JumpRing.transform.localScale.x, 0f, Time.deltaTime * LerpSpeed), Mathf.Lerp(JumpRing.transform.localScale.y, 0f, Time.deltaTime * LerpSpeed), 1);
+    }
+
 }

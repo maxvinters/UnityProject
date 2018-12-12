@@ -7,6 +7,10 @@ public class PointerScript : MonoBehaviour {
 
     [SerializeField]
     LineRenderer LR;
+    [SerializeField]
+    GameObject PatternField;
+    [SerializeField]
+    GameObject[] FieldDots;
     bool Started;
     List<string>Patterns = new List<string>();
     SavedPatt Saving = new SavedPatt();
@@ -16,32 +20,29 @@ public class PointerScript : MonoBehaviour {
 
     void Start()
     {
+        FieldDots = PatternField.GetComponent<PatternScript>().Dots;
         string json = File.ReadAllText(path);
         Saving = JsonUtility.FromJson<SavedPatt>(json);
         Patterns = Saving.Patterns;
     }
 
-    void Awake()
+    void OnEnable()
     {
         Started = false;
         Dots.Clear();
         DotsPos.Clear();
+        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);
+        PatternField.SetActive(true);
     }
+
+    void OnDisable()
+    {
+        PatternField.SetActive(false);
+    }
+
 
     void Update()
     {
-        if(Input.GetMouseButtonUp(0))
-        {
-            if (Patterns.Contains(List2string(Dots)) && Started)
-                print("Yes");
-            else
-                print("No");
-        }
-    }
-
-   void FixedUpdate()
-    {
-        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);
         if (Input.GetMouseButtonDown(0))
         {
             LR.positionCount = 0;
@@ -49,9 +50,24 @@ public class PointerScript : MonoBehaviour {
         }
     }
 
+   void FixedUpdate()
+    {
+        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);
+
+        foreach (GameObject Dot in FieldDots)
+            Dot.SetActive(true);
+        foreach(GameObject Dot in FieldDots)
+        {
+            if (Vector2.Distance(Dot.transform.position, transform.position) > 0.51f && !Dots.Contains(Dot.name))
+                Dot.SetActive(false);
+            print(Vector2.Distance(Dot.transform.position, transform.position));
+        }
+
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Dot") && Input.GetMouseButton(0))
+        if (col.gameObject.CompareTag("Dot"))
         {
             if (Started)
             {
@@ -61,14 +77,6 @@ public class PointerScript : MonoBehaviour {
                     DotsPos.Add(col.transform.position);
                     LR.positionCount = DotsPos.Count;
                     LR.SetPositions(DotsPos.ToArray());
-                    /////////
-                    /*Saving.Patterns.Add(Dots2string(Dots));
-                    Saving.Patterns.Add(Dots2string(Dots));
-                    string json = JsonUtility.ToJson(Saving);
-                    StreamWriter sw = File.CreateText(path);
-                    sw.Close();
-                    File.WriteAllText(path, json);*/
-                    
                 }
             }
             else
