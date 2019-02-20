@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Enemies\Wathmen\EyeScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\Wathmen\LegsScript.cs" />
      <Compile Include="Assets\Scripts\Environment\CoverScript.cs" />
+     <Compile Include="Assets\Scripts\Environment\DarknessScript.cs" />
      <Compile Include="Assets\Scripts\Main Character\CliffScript.cs" />
      <Compile Include="Assets\Scripts\Main Character\JumpScript.cs" />
      <Compile Include="Assets\Scripts\Main Character\MovementScript.cs" />
@@ -66,6 +67,7 @@
      <Compile Include="Assets\Scripts\Main Character\ShadowScript.cs" />
      <Compile Include="Assets\Scripts\Main Character\SilentKillScript.cs" />
      <Compile Include="Assets\Scripts\Main Character\SprintScript.cs" />
+     <Compile Include="Assets\Scripts\Main Character\StairsScript.cs" />
      <Compile Include="Assets\Virtual Joystick Pack\Examples\2D Example\Player2DExample.cs" />
      <Compile Include="Assets\Virtual Joystick Pack\Examples\3D Example\Player3DExample.cs" />
      <Compile Include="Assets\Virtual Joystick Pack\Scripts\Base\Joystick.cs" />

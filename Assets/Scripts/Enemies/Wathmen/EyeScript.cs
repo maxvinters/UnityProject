@@ -41,7 +41,7 @@ public class EyeScript : MonoBehaviour {
     {
         if(Mathf.Abs(rb.velocity.x) > 0.1f)
             isRight = rb.velocity.x > 0;
-        RaycastHit2D[] hits = new RaycastHit2D[5];
+        RaycastHit2D[] hits = new RaycastHit2D[6];
         if (isRight)
         {
 
@@ -50,11 +50,13 @@ public class EyeScript : MonoBehaviour {
             hits[2] = Physics2D.Raycast(eye.position, Vector2.right + new Vector2(0, -0.15f), range, mask);
             hits[3] = Physics2D.Raycast(eye.position, Vector2.right + new Vector2(0, 0.30f), range, mask);
             hits[4] = Physics2D.Raycast(eye.position, Vector2.right + new Vector2(0, -0.30f), range, mask);
+            hits[5] = Physics2D.Raycast(eye.position, Vector2.right + new Vector2(0, -0.95f), range / 4, mask);
             Debug.DrawRay(eye.position, Vector2.right * range, Color.red);
             Debug.DrawRay(eye.position, (Vector2.right + new Vector2(0, -0.15f)) * range, Color.red);
             Debug.DrawRay(eye.position, (Vector2.right + new Vector2(0, 0.15f))* range, Color.red);
             Debug.DrawRay(eye.position, (Vector2.right + new Vector2(0, -0.30f)) * range, Color.red);
             Debug.DrawRay(eye.position, (Vector2.right + new Vector2(0, 0.30f)) * range, Color.red);
+            Debug.DrawRay(eye.position, (Vector2.right + new Vector2(0, -0.95f)) * range / 4, Color.red);
         }
         else
         {
@@ -63,11 +65,13 @@ public class EyeScript : MonoBehaviour {
             hits[2] = Physics2D.Raycast(eye.position, Vector2.left + new Vector2(0, -0.15f), range, mask);
             hits[3] = Physics2D.Raycast(eye.position, Vector2.left + new Vector2(0, 0.30f), range, mask);
             hits[4] = Physics2D.Raycast(eye.position, Vector2.left + new Vector2(0, -0.30f), range, mask);
+            hits[5] = Physics2D.Raycast(eye.position, Vector2.left + new Vector2(0, -0.95f), range / 4, mask);
             Debug.DrawRay(eye.position, Vector2.left * range, Color.red);
             Debug.DrawRay(eye.position, (Vector2.left + new Vector2(0, -0.15f)) * range, Color.red);
             Debug.DrawRay(eye.position, (Vector2.left + new Vector2(0, 0.15f)) * range, Color.red);
             Debug.DrawRay(eye.position, (Vector2.left + new Vector2(0, -0.30f)) * range, Color.red);
             Debug.DrawRay(eye.position, (Vector2.left + new Vector2(0, 0.30f)) * range, Color.red);
+            Debug.DrawRay(eye.position, (Vector2.left + new Vector2(0, -0.95f)) * range / 4, Color.red);
         }
         foreach (RaycastHit2D hit in hits)
         {

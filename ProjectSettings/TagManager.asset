@@ -9,6 +9,8 @@ TagManager:
   - RCliffTag
   - LCliffTag
   - CoverTag
+  - Neck
+  - Stairs
   layers:
   - Default
   - TransparentFX

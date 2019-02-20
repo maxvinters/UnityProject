@@ -5,6 +5,8 @@ using UnityEngine;
 public class LegsScript : MonoBehaviour {
 
     Rigidbody2D rb;
+    [SerializeField]
+    GameObject Neck;
 
     [SerializeField]
     Transform[] waysPos;
@@ -16,7 +18,7 @@ public class LegsScript : MonoBehaviour {
 
     [SerializeField]
     float speed;
-
+    bool isRight;
     int currentWay;
 
 	void Start ()
@@ -34,7 +36,8 @@ public class LegsScript : MonoBehaviour {
     IEnumerator GoToPoint()
     {
         rb.velocity = new Vector2(Mathf.Sign(wayPoints[currentWay].position.x - transform.position.x), 0) * speed;
-        GetComponent<SpriteRenderer>().flipX = wayPoints[currentWay].position.x - transform.position.x > 0;
+        if (isRight ^ wayPoints[currentWay].position.x - transform.position.x > 0)
+            Flip();
         yield return new WaitUntil(() => Vector2.Distance(transform.position, wayPoints[currentWay].position) < 1f);
         rb.velocity = rb.velocity * 0.7f;
         yield return new WaitUntil(() => Vector2.Distance(transform.position, wayPoints[currentWay].position) < 0.85f);
@@ -46,6 +49,13 @@ public class LegsScript : MonoBehaviour {
         StartCoroutine(GoToPoint());
     }
 
+
+    void Flip()
+    {
+        isRight = !isRight;
+        GetComponent<SpriteRenderer>().flipX ^= true;
+        Neck.transform.localPosition = new Vector2(Neck.transform.localPosition.x * (-1), Neck.transform.localPosition.y); 
+    }
 }
 
 public class WayPoint

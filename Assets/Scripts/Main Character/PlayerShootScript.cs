@@ -4,13 +4,44 @@ using UnityEngine;
 
 public class PlayerShootScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+
+    int lastTouchCount;
+    bool canShoot;
+
+    [SerializeField]
+    float reload;
+
+
+    [SerializeField]
+    Transform ShotPos;
+
+    [SerializeField]
+    GameObject bullet;
+
+	void Start ()
+    {
+        canShoot = true;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+	void Update ()
+    {
+        if (Input.touchCount > lastTouchCount && lastTouchCount == 0 && canShoot && (Input.GetTouch(0).position.x > 540 ||   Input.GetTouch(0).position.y > 540))
+            StartCoroutine(Shot());
+    }
+
+
+    void LateUpdate()
+    {
+        lastTouchCount = Input.touchCount;
+
+    }
+    IEnumerator Shot()
+    {
+        canShoot = false;
+        GameObject bull = Instantiate(bullet, ShotPos.position,Quaternion.identity);
+        bull.GetComponent<Rigidbody2D>().velocity = (Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position) + new Vector3(0, 0, 10) - transform.position).normalized * 10f;
+        yield return new WaitForSeconds(reload);
+        canShoot = true;
+    }
 }
