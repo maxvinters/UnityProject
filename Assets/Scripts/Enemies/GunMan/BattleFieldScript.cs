@@ -41,7 +41,7 @@ public class BattleFieldScript : MonoBehaviour {
             foreach (Collider2D col in covcoliders)
             {
                 if (Mathf.Abs(col.transform.position.y - transform.position.y) < 4 && Vector2.Distance(transform.position, player.transform.position) > Vector2.Distance(col.transform.position, player.transform.position)
-                        && Mathf.Approximately(Mathf.Sign(col.transform.position.x - transform.position.x), Mathf.Sign(player.transform.position.x - transform.position.x)))
+                        && Mathf.Approximately(Mathf.Sign(col.transform.position.x - transform.position.x), Mathf.Sign(player.transform.position.x - transform.position.x))&& !col.GetComponent<CoverScript>().isBusy)
                     Covers.Add(col.gameObject);
             }
 
@@ -84,7 +84,6 @@ public class BattleFieldScript : MonoBehaviour {
                 myCover.name = "Temporary";
             }
             rb.velocity = new Vector2(myCover.transform.position.x - transform.position.x, 0).normalized * Speed;
-            print(myCover.transform.position.x - transform.position.x);
         }
 
         if(inCover && Vector2.Distance(transform.position,player.transform.position) < 3f)
@@ -130,12 +129,11 @@ public class BattleFieldScript : MonoBehaviour {
         foreach (Collider2D col in covcoliders)
         {
             if (Mathf.Abs(col.transform.position.y - transform.position.y) < 4 && Vector2.Distance(transform.position, player.transform.position) > Vector2.Distance(col.transform.position, player.transform.position)
-                    && Mathf.Approximately(Mathf.Sign(col.transform.position.x - transform.position.x), Mathf.Sign(player.transform.position.x - transform.position.x)))
+                    && Mathf.Approximately(Mathf.Sign(col.transform.position.x - transform.position.x), Mathf.Sign(player.transform.position.x - transform.position.x)) && !col.GetComponent<CoverScript>().isBusy)
                 Covers.Add(col.gameObject);
         }
 
         Covers.Sort((x, y) => Vector2.Distance(x.transform.position, transform.position).CompareTo(Vector2.Distance(y.transform.position, transform.position)));
-
         for (int i = 0; i < Covers.Count; i++)
         {
             if (Vector2.Distance(Covers[i].transform.position, player.transform.position) < Range && Mathf.Approximately(Mathf.Sign(player.transform.position.x - Covers[i].transform.position.x), Mathf.Sign(player.transform.position.x - transform.position.x)))
@@ -143,9 +141,10 @@ public class BattleFieldScript : MonoBehaviour {
             {
                 findCover = true;
                 if (player.transform.position.x < Covers[i].transform.position.x)
-                    Covers[i].transform.GetChild(0).GetComponent<CircleCollider2D>().enabled = true;
+                    Covers[i].transform.GetChild(0).GetComponent<CircleCollider2D>().enabled = true; 
                 else
                     Covers[i].transform.GetChild(1).GetComponent<CircleCollider2D>().enabled = true;
+                Covers[i].GetComponent<CoverScript>().isBusy = true;
                 return Covers[i];
 
             }
@@ -163,7 +162,7 @@ public class BattleFieldScript : MonoBehaviour {
         foreach (Collider2D col in covcoliders)
         {
             if (Mathf.Abs(col.transform.position.y - transform.position.y) < 4 && Vector2.Distance(transform.position, player.transform.position) < Vector2.Distance(col.transform.position, player.transform.position)
-                && !Mathf.Approximately(Mathf.Sign(col.transform.position.x-transform.position.x), Mathf.Sign(player.transform.position.x - transform.position.x)))
+                && !Mathf.Approximately(Mathf.Sign(col.transform.position.x-transform.position.x), Mathf.Sign(player.transform.position.x - transform.position.x)) && !col.GetComponent<CoverScript>().isBusy)
                 Covers.Add(col.gameObject);
         }
         Covers.Sort((x, y) => Vector2.Distance(x.transform.position, transform.position).CompareTo(Vector2.Distance(y.transform.position, transform.position)));
@@ -175,6 +174,7 @@ public class BattleFieldScript : MonoBehaviour {
                     Covers[0].transform.GetChild(0).GetComponent<CircleCollider2D>().enabled = true;
                 else
                     Covers[0].transform.GetChild(1).GetComponent<CircleCollider2D>().enabled = true;
+                Covers[0].GetComponent<CoverScript>().isBusy = true;
                 return Covers[0];
             }
         }

@@ -38,9 +38,7 @@ public class LegsScript : MonoBehaviour {
         rb.velocity = new Vector2(Mathf.Sign(wayPoints[currentWay].position.x - transform.position.x), 0) * speed;
         if (isRight ^ wayPoints[currentWay].position.x - transform.position.x > 0)
             Flip();
-        yield return new WaitUntil(() => Vector2.Distance(transform.position, wayPoints[currentWay].position) < 1f);
-        rb.velocity = rb.velocity * 0.7f;
-        yield return new WaitUntil(() => Vector2.Distance(transform.position, wayPoints[currentWay].position) < 0.85f);
+        yield return new WaitUntil(() => Mathf.Abs(transform.position.x - wayPoints[currentWay].position.x) < 0.5f);
         rb.velocity = Vector2.zero;
         yield return new WaitForSeconds(wayPoints[currentWay].restTime);
         currentWay++;

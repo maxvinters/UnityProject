@@ -31,7 +31,7 @@ public class JumpScript : MonoBehaviour {
     {
         if(!isGrounded)
         {
-            RaycastHit2D hit = Physics2D.Raycast(legs.position,Vector2.down,0.3f,mask.value);
+            RaycastHit2D hit = Physics2D.Raycast(legs.position, Vector2.down, 0.3f,mask.value);
             if (hit)
             {
                 isGrounded = true;
@@ -44,24 +44,29 @@ public class JumpScript : MonoBehaviour {
     public void StartJump(int state) //1-up and rigth, 2- up, 3-up and left
     {
         rb.velocity = Vector2.zero; //???
-        if (state == 2)
+        RaycastHit2D hit = Physics2D.Raycast(legs.position, Vector2.down, 0.3f, LayerMask.GetMask("Stairs"));
+        if (!hit)
         {
-            //anim.Play();
+            if (state == 2)
+            {
+                //anim.Play();
 
-            rb.AddForce(Vector2.up * jumpPower);
-        }
-       else if(state == 1)
-        {
-            //anim.Play();
-            rb.AddForce(JumpDirection * jumpPower);
-        }
-       else if(state == 3)
-        {
-            //anim.Play();
-            rb.AddForce(JumpDirection * new Vector2(-1,1) * jumpPower);
-        }
+                rb.AddForce(Vector2.up * jumpPower);
+            }
+            else if (state == 1)
+            {
+                //anim.Play();
+                rb.AddForce(JumpDirection * jumpPower);
+            }
+            else if (state == 3)
+            {
+                //anim.Play();
+                rb.AddForce(JumpDirection * new Vector2(-1, 1) * jumpPower);
+            }
 
-        Invoke("ChangeGround", 0.3f);
+            Invoke("ChangeGround", 0.3f);
+        }
+        else mov.inOtherMovement = false;
     }
 
     void ChangeGround()

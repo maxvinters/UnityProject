@@ -7,9 +7,11 @@ public class CoverScript : MonoBehaviour {
     [SerializeField]
     BoxCollider2D hitbox;
 
+    public bool isBusy;
+
 	void Start () 
     {
-		
+        isBusy = false;
 	}
 	
 	void Update ()
@@ -23,6 +25,7 @@ public class CoverScript : MonoBehaviour {
     }
     public void Disablehitbox()
     {
+        isBusy = false;
         hitbox.enabled = false;
     }
 }

@@ -40,7 +40,6 @@ public class ShootingScript : MonoBehaviour {
 
     void Start()
     {
-        print("Sish");
         bfs = GetComponent<BattleFieldScript>();
         sr = GetComponent<SpriteRenderer>();
         canShoot = true;

@@ -11,7 +11,8 @@ public class StairsScript : MonoBehaviour {
 
     [SerializeField]
     Joystick joystick;
-
+    [SerializeField]
+    Collider2D collider;
     [SerializeField]
     float speed;
     float gravScale;
@@ -35,6 +36,7 @@ public class StairsScript : MonoBehaviour {
     {
         if (col.CompareTag("Stairs"))
         {
+            collider.enabled = false;
             onStairs = true;
             rb.gravityScale = 0;
             mov.inOtherMovement = true;
@@ -45,6 +47,7 @@ public class StairsScript : MonoBehaviour {
     {
         if (col.CompareTag("Stairs"))
         {
+            collider.enabled = true; 
             onStairs = false;
             rb.gravityScale = gravScale;
             mov.inOtherMovement = false;

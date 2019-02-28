@@ -89,6 +89,7 @@ public class EyeScript : MonoBehaviour {
         yield return new WaitForSeconds(thinkTime);
         bfs.enabled = true;
         shs.enabled = true;
+        transform.GetChild(2).gameObject.SetActive(false);
         enabled = false;
 
     }

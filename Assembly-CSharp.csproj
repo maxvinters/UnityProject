@@ -53,10 +53,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Allies\FireMan\AllyBattleFieldScript.cs" />
+     <Compile Include="Assets\Scripts\Allies\StealthMan\FollowerScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\GunMan\BattleFieldScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\GunMan\ShootingScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\Wathmen\EyeScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\Wathmen\LegsScript.cs" />
+     <Compile Include="Assets\Scripts\Environment\CameraScript.cs" />
      <Compile Include="Assets\Scripts\Environment\CoverScript.cs" />
      <Compile Include="Assets\Scripts\Environment\DarknessScript.cs" />
      <Compile Include="Assets\Scripts\Main Character\CliffScript.cs" />
