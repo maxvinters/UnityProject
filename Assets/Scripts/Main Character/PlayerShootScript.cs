@@ -16,9 +16,16 @@ public class PlayerShootScript : MonoBehaviour {
     Transform ShotPos;
 
     [SerializeField]
+    int damage;
+
+    [SerializeField]
     GameObject bullet;
 
-	void Start ()
+    [SerializeField]
+    float bulletSpeed;
+
+
+    void Start ()
     {
         canShoot = true;
 	}
@@ -40,7 +47,9 @@ public class PlayerShootScript : MonoBehaviour {
     {
         canShoot = false;
         GameObject bull = Instantiate(bullet, ShotPos.position,Quaternion.identity);
-        bull.GetComponent<Rigidbody2D>().velocity = (Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position) + new Vector3(0, 0, 10) - transform.position).normalized * 10f;
+        bull.GetComponent<Rigidbody2D>().velocity = (Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position) + new Vector3(0, 0, 10) - transform.position).normalized * bulletSpeed;
+        bull.GetComponent<BulletScript>().friendly = true;
+        bull.GetComponent<BulletScript>().damage = damage; 
         yield return new WaitForSeconds(reload);
         canShoot = true;
     }

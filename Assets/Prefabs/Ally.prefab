@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212327636921121414}
   - component: {fileID: 50284865844230054}
   - component: {fileID: 70459728882665070}
+  - component: {fileID: 114108482345694680}
+  - component: {fileID: 114134361369029358}
   m_Layer: 15
   m_Name: Ally
   m_TagString: Untagged
@@ -77,6 +79,48 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.2, y: 3.09}
   m_Direction: 0
+--- !u!114 &114108482345694680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1180014559461564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a57ea6aa8b324e75a7666d5b39620d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  offset: 0
+  speed: 5
+  coverMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  shadowMask:
+    serializedVersion: 2
+    m_Bits: 8192
+  Range: 15
+  myCover: {fileID: 0}
+--- !u!114 &114134361369029358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1180014559461564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc8fbf7a04564c999181e866c0828af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  coverMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  Range: 15
+  myCover: {fileID: 0}
 --- !u!212 &212327636921121414
 SpriteRenderer:
   m_ObjectHideFlags: 1

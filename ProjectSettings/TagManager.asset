@@ -13,6 +13,8 @@ TagManager:
   - Stairs
   - CamWall
   - CamFloor
+  - Enemy
+  - Cover
   layers:
   - Default
   - TransparentFX
@@ -27,7 +29,7 @@ TagManager:
   - Tag
   - Cover
   - Stairs
-  - 
+  - Shadow
   - Enemy
   - Ally
   - 

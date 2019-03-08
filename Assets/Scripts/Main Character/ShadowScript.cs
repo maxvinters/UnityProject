@@ -5,20 +5,17 @@ using UnityEngine;
 public class ShadowScript : MonoBehaviour {
 
     MovementScript mov;
-
-    Animator anim;
     Rigidbody2D rb;
     CapsuleCollider2D col;
     bool isHiding;
     bool inShadow;
-    GameObject Shadow;
+    GameObject shadow;
     [SerializeField]
     Joystick joystick;
 
     void Start ()
     {
         mov = GetComponent<MovementScript>();
-        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<CapsuleCollider2D>();
     }
@@ -36,7 +33,8 @@ public class ShadowScript : MonoBehaviour {
                 mov.inOtherMovement = true;
                 col.enabled = false;
                 rb.simulated = false;
-                GetComponentInParent<Transform>().position = Shadow.transform.GetChild(0).transform.position;
+                shadow.GetComponent<EnvShadowScript>().isBusy = true;
+                transform.position = shadow.transform.GetChild(0).transform.position;
                 GetComponentInChildren<SpriteRenderer>().sortingOrder=0;
                 return;
             }
@@ -45,6 +43,7 @@ public class ShadowScript : MonoBehaviour {
                 isHiding = mov.inOtherMovement = false;
                 col.enabled = true;
                 rb.simulated = true;
+                shadow.GetComponent<EnvShadowScript>().isBusy = false;
                 GetComponentInChildren<SpriteRenderer>().sortingOrder = 2;
             }
         }
@@ -55,7 +54,7 @@ public class ShadowScript : MonoBehaviour {
         if (trig.gameObject.CompareTag("Shadow"))
         {
             inShadow = true;
-            Shadow = trig.gameObject;
+            shadow = trig.gameObject;
 
         }
     }

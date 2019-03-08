@@ -34,7 +34,13 @@ public class ShootingScript : MonoBehaviour {
     float bulletSpeed;
 
     [SerializeField]
+    int damage;
+
+    [SerializeField]
     Transform shotPoint;
+
+    [SerializeField]
+    GameObject player;
 
     bool canShoot;
 
@@ -82,9 +88,11 @@ public class ShootingScript : MonoBehaviour {
     }
     void Shoot()
     {
-        GameObject newBullet = Instantiate(bullet, shotPoint.position, shotPoint.rotation);
-        int direction = shotPoint.position.x > bfs.player.transform.position.x ? -1 : 1;
-        newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(direction, Random.Range(-0.05f,0.05f)).normalized * bulletSpeed;
+        GameObject newBullet = Instantiate(bullet, shotPoint.position, shotPoint.rotation) as GameObject;
+        Vector2 direction = player.transform.position-newBullet.transform.position;
+        newBullet.GetComponent<Rigidbody2D>().velocity = (direction + new Vector2(Random.Range(-1.3f,1.3f), Random.Range(-1.3f, 1.3f))).normalized * bulletSpeed;
+        newBullet.GetComponent<BulletScript>().friendly = false;
+        newBullet.GetComponent<BulletScript>().damage = damage;
         Destroy(newBullet, 2f);
     }
 }

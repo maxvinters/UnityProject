@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 50213918328780734}
   m_Layer: 14
   m_Name: GunMan
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,6 +230,7 @@ MonoBehaviour:
   fullReloadTime: 5
   bullet: {fileID: 1332816261968256, guid: 28499b551cfd14cea808580dbaf565ba, type: 2}
   bulletSpeed: 10
+  damage: 35
   shotPoint: {fileID: 4120578026141828}
 --- !u!114 &114755376133345900
 MonoBehaviour:

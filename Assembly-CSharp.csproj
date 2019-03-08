@@ -59,12 +59,16 @@
      <Compile Include="Assets\Scripts\Enemies\GunMan\ShootingScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\Wathmen\EyeScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\Wathmen\LegsScript.cs" />
+     <Compile Include="Assets\Scripts\Environment\BulletScript.cs" />
      <Compile Include="Assets\Scripts\Environment\CameraScript.cs" />
      <Compile Include="Assets\Scripts\Environment\CoverScript.cs" />
      <Compile Include="Assets\Scripts\Environment\DarknessScript.cs" />
+     <Compile Include="Assets\Scripts\Environment\EnvShadowScript.cs" />
      <Compile Include="Assets\Scripts\Main Character\CliffScript.cs" />
      <Compile Include="Assets\Scripts\Main Character\JumpScript.cs" />
      <Compile Include="Assets\Scripts\Main Character\MovementScript.cs" />
+     <Compile Include="Assets\Scripts\Main Character\PlayerCoverScript.cs" />
+     <Compile Include="Assets\Scripts\Main Character\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerShootScript.cs" />
      <Compile Include="Assets\Scripts\Main Character\RollScript.cs" />
      <Compile Include="Assets\Scripts\Main Character\ShadowScript.cs" />

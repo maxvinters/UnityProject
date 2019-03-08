@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CoverScript : MonoBehaviour {
 
-    [SerializeField]
-    BoxCollider2D hitbox;
 
     public bool isBusy;
 
@@ -21,11 +19,10 @@ public class CoverScript : MonoBehaviour {
 
     public void Enablehitbox()
     {
-        hitbox.enabled = true;
+        isBusy = true;
     }
     public void Disablehitbox()
     {
         isBusy = false;
-        hitbox.enabled = false;
     }
 }

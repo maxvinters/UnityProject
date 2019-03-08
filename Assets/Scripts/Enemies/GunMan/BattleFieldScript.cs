@@ -109,11 +109,11 @@ public class BattleFieldScript : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("CoverTag") && !inCover)
+        if (col.CompareTag("CoverTag") && !inCover && col.gameObject.Equals(myCover))
         {
             inCover = true;
             if(!withoutCover)
-                myCover.GetComponent<CoverScript>().Enablehitbox();
+                myCover.transform.parent.GetComponent<CoverScript>().isBusy = true;
             rb.velocity = Vector2.zero;
         }
     }   
@@ -140,13 +140,11 @@ public class BattleFieldScript : MonoBehaviour {
             // if can shoot from it && player and cover in same direction
             {
                 findCover = true;
-                if (player.transform.position.x < Covers[i].transform.position.x)
-                    Covers[i].transform.GetChild(0).GetComponent<CircleCollider2D>().enabled = true; 
-                else
-                    Covers[i].transform.GetChild(1).GetComponent<CircleCollider2D>().enabled = true;
                 Covers[i].GetComponent<CoverScript>().isBusy = true;
-                return Covers[i];
-
+                if (player.transform.position.x < Covers[i].transform.position.x)
+                    return Covers[i].transform.GetChild(0).gameObject;
+                else
+                    return Covers[i].transform.GetChild(1).gameObject;
             }
         }
         return null;
@@ -170,12 +168,12 @@ public class BattleFieldScript : MonoBehaviour {
         {
             if (Vector2.Distance(Covers[0].transform.position, player.transform.position) < Range)
             {
-                if (player.transform.position.x < Covers[0].transform.position.x)
-                    Covers[0].transform.GetChild(0).GetComponent<CircleCollider2D>().enabled = true;
-                else
-                    Covers[0].transform.GetChild(1).GetComponent<CircleCollider2D>().enabled = true;
                 Covers[0].GetComponent<CoverScript>().isBusy = true;
-                return Covers[0];
+                if (player.transform.position.x < Covers[0].transform.position.x)
+                    return Covers[0].transform.GetChild(0).gameObject;
+                else
+                    return Covers[0].transform.GetChild(1).gameObject;
+                    
             }
         }
         return null;
@@ -185,9 +183,7 @@ public class BattleFieldScript : MonoBehaviour {
     {
         if (!withoutCover)
         {
-            myCover.transform.GetChild(0).GetComponent<CircleCollider2D>().enabled = false;
-            myCover.transform.GetChild(1).GetComponent<CircleCollider2D>().enabled = false;
-            myCover.GetComponent<CoverScript>().Disablehitbox();
+            myCover.transform.parent.GetComponent<CoverScript>().isBusy = false;
         }
         else
         {
