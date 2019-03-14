@@ -5,7 +5,7 @@ using UnityEngine;
 public class AllyBattleFieldScript : MonoBehaviour {
 
     [SerializeField]
-    GameObject enemy;
+    public GameObject enemy;
 
     [SerializeField]
     float speed;
@@ -23,7 +23,7 @@ public class AllyBattleFieldScript : MonoBehaviour {
     Rigidbody2D rb;
     Vector3 targetpos;
     bool onTarget;
-    bool inCover;
+    public bool inCover;
 
     void Start ()
     {

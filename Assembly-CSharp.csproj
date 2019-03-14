@@ -53,7 +53,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Allies\ChangeStateScript.cs" />
      <Compile Include="Assets\Scripts\Allies\FireMan\AllyBattleFieldScript.cs" />
+     <Compile Include="Assets\Scripts\Allies\FireMan\AllyShootingScript.cs" />
      <Compile Include="Assets\Scripts\Allies\StealthMan\FollowerScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\GunMan\BattleFieldScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\GunMan\ShootingScript.cs" />
@@ -64,6 +66,7 @@
      <Compile Include="Assets\Scripts\Environment\CoverScript.cs" />
      <Compile Include="Assets\Scripts\Environment\DarknessScript.cs" />
      <Compile Include="Assets\Scripts\Environment\EnvShadowScript.cs" />
+     <Compile Include="Assets\Scripts\Main Character\AlarmScript.cs" />
      <Compile Include="Assets\Scripts\Main Character\CliffScript.cs" />
      <Compile Include="Assets\Scripts\Main Character\JumpScript.cs" />
      <Compile Include="Assets\Scripts\Main Character\MovementScript.cs" />

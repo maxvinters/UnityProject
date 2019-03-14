@@ -25,6 +25,7 @@ public class BattleFieldScript : MonoBehaviour {
 
     void Start()
     {
+        player.GetComponent<AlarmScript>().MakeAlarm();
         inCover = false;
         findCover = false;
         withoutCover = false;

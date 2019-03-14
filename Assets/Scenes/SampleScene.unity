@@ -1391,6 +1391,7 @@ GameObject:
   - component: {fileID: 385745000}
   - component: {fileID: 385745001}
   - component: {fileID: 385744999}
+  - component: {fileID: 385745002}
   m_Layer: 8
   m_Name: Astronaut
   m_TagString: Player
@@ -1587,6 +1588,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 1875078027}
+--- !u!114 &385745002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385744988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47ab198b88b84c2794e0c6ebe40c875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allies:
+  - {fileID: 1930184123}
+  - {fileID: 1594853877}
 --- !u!1 &444642686
 GameObject:
   m_ObjectHideFlags: 0
@@ -6805,53 +6820,18 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 385744988}
-    - target: {fileID: 114108482345694680, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: offset
-      value: 7.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1180014559461564, guid: 02b21108c0374462e9501a576ae597a8, type: 2}
       propertyPath: m_Name
       value: Ally (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 114108482345694680, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: coverMask.m_Bits
-      value: 2048
-      objectReference: {fileID: 0}
-    - target: {fileID: 114134361369029358, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: offset
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114134361369029358, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 385744988}
-    - target: {fileID: 114108482345694680, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114134361369029358, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: coverMask.m_Bits
-      value: 2048
-      objectReference: {fileID: 0}
-    - target: {fileID: 50284865844230054, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114134361369029358, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: speed
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02b21108c0374462e9501a576ae597a8, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1594853877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1180014559461564, guid: 02b21108c0374462e9501a576ae597a8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1594853876}
 --- !u!1 &1634862856
 GameObject:
   m_ObjectHideFlags: 0
@@ -8871,49 +8851,14 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 385744988}
-    - target: {fileID: 114108482345694680, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: offset
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114108482345694680, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: coverMask.m_Bits
-      value: 2048
-      objectReference: {fileID: 0}
-    - target: {fileID: 114134361369029358, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: offset
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114134361369029358, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 385744988}
-    - target: {fileID: 114108482345694680, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114134361369029358, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: coverMask.m_Bits
-      value: 2048
-      objectReference: {fileID: 0}
-    - target: {fileID: 50284865844230054, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114134361369029358, guid: 02b21108c0374462e9501a576ae597a8,
-        type: 2}
-      propertyPath: speed
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02b21108c0374462e9501a576ae597a8, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1930184123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1180014559461564, guid: 02b21108c0374462e9501a576ae597a8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1930184122}
 --- !u!1 &1945797715
 GameObject:
   m_ObjectHideFlags: 0
