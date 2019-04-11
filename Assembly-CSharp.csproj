@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_2_7;UNITY_2018_2;UNITY_2018;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_LINUX;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_2_7;UNITY_2018_2;UNITY_2018;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_LINUX;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -53,6 +53,69 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DragonBones\Demos\Scripts\AnimationBase.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\AnimationLayer.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\BaseDemo.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\BoneOffset.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\BoundingBox.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\CoreElement.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\DragonBonesEvent.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\HelloDragonBones.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\InverseKinematics.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\LightShader.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\Performance.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\ReplaceAnimtion.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\ReplaceSkin.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\ReplaceSlotDisplay.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\3rdParty\MiniJSON.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\animation\Animation.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\animation\AnimationState.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\animation\BaseTimelineState.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\animation\IAnimatable.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\animation\TimelineState.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\animation\WorldClock.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\armature\Armature.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\armature\Bone.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\armature\Constraint.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\armature\DeformVertices.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\armature\IArmatureProxy.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\armature\Slot.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\armature\TransformObject.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\core\BaseObject.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\core\DragonBones.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\event\EventObject.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\event\IEventDispatcher.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\factory\BaseFactory.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\geom\ColorTransform.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\geom\Matrix.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\geom\Point.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\geom\Rectangle.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\geom\Transform.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\AnimationConfig.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\AnimationData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\ArmatureData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\BoundingBoxData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\CanvasData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\ConstraintData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\DisplayData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\DragonBonesData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\SkinData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\TextureAtlasData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\UserData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataParser.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataReader.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataWriter.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\parser\DataParser.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\parser\ObjectDataParser.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\MeshBuffer.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnityArmatureComponent.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnityCombineMeshs.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnityDragonBonesData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnityEventDispatcher.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnityFactory.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnitySlot.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnityTextureAtlasData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnityUGUIDisplay.cs" />
      <Compile Include="Assets\Scripts\Allies\ChangeStateScript.cs" />
      <Compile Include="Assets\Scripts\Allies\FireMan\AllyBattleFieldScript.cs" />
      <Compile Include="Assets\Scripts\Allies\FireMan\AllyShootingScript.cs" />
@@ -84,6 +147,9 @@
      <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
      <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
      <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+     <None Include="Assets\DragonBones\Resources\Shaders\DB_BlendMode_Grab.shader" />
+     <None Include="Assets\DragonBones\Resources\Shaders\DB_BlendMode_UIGrab.shader" />
+     <None Include="Assets\DragonBones\Demos\Scripts\LightTestShader.shader" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>/home/andrew/Unity-2018.2.7f1/Projects/Platformer/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

@@ -1,0 +1,261 @@
+fileFormatVersion: 2
+guid: 4c8242fcd215b41aeb7d1c8e129cd306
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: B1
+    100002: B10
+    100004: B11
+    100006: B12
+    100008: B13
+    100010: B14
+    100012: B15
+    100014: B16
+    100016: B17
+    100018: B18
+    100020: B19
+    100022: B2
+    100024: B20
+    100026: B21
+    100028: B22
+    100030: B23
+    100032: B24
+    100034: B26
+    100036: B27
+    100038: B28
+    100040: B29
+    100042: B3
+    100044: B30
+    100046: B31
+    100048: B32
+    100050: B33
+    100052: B34
+    100054: B35
+    100056: B36
+    100058: B4
+    100060: B5
+    100062: B6
+    100064: B7
+    100066: B8
+    100068: B9
+    100070: brov|10
+    100072: GG
+    100074: GG 1
+    100076: //RootNode
+    100078: Glaz|9
+    100080: Golova
+    100082: golova|4
+    100084: Hvost|13
+    100086: kol|6
+    100088: Lico
+    100090: Moho Camera
+    100092: Noga L
+    100094: Noga P
+    100096: noga|12
+    100098: noga|15
+    100100: PALEC|1
+    100102: Ruka L
+    100104: Ruka p
+    100106: rukap 2|0
+    100108: rukap|17
+    100110: Rukav|18
+    100112: Rukav|2
+    100114: Sapka2|3
+    100116: Shapka1|7
+    100118: stopa|11
+    100120: stopa|14
+    100122: telo|16
+    100124: ten|8
+    100126: Uho
+    100128: Uho|5
+    400000: B1
+    400002: B10
+    400004: B11
+    400006: B12
+    400008: B13
+    400010: B14
+    400012: B15
+    400014: B16
+    400016: B17
+    400018: B18
+    400020: B19
+    400022: B2
+    400024: B20
+    400026: B21
+    400028: B22
+    400030: B23
+    400032: B24
+    400034: B26
+    400036: B27
+    400038: B28
+    400040: B29
+    400042: B3
+    400044: B30
+    400046: B31
+    400048: B32
+    400050: B33
+    400052: B34
+    400054: B35
+    400056: B36
+    400058: B4
+    400060: B5
+    400062: B6
+    400064: B7
+    400066: B8
+    400068: B9
+    400070: brov|10
+    400072: GG
+    400074: GG 1
+    400076: //RootNode
+    400078: Glaz|9
+    400080: Golova
+    400082: golova|4
+    400084: Hvost|13
+    400086: kol|6
+    400088: Lico
+    400090: Moho Camera
+    400092: Noga L
+    400094: Noga P
+    400096: noga|12
+    400098: noga|15
+    400100: PALEC|1
+    400102: Ruka L
+    400104: Ruka p
+    400106: rukap 2|0
+    400108: rukap|17
+    400110: Rukav|18
+    400112: Rukav|2
+    400114: Sapka2|3
+    400116: Shapka1|7
+    400118: stopa|11
+    400120: stopa|14
+    400122: telo|16
+    400124: ten|8
+    400126: Uho
+    400128: Uho|5
+    2000000: Moho Camera
+    2100000: No Name
+    4300000: rukap 2|0
+    4300002: PALEC|1
+    4300004: Rukav|2
+    4300006: Sapka2|3
+    4300008: golova|4
+    4300010: Uho|5
+    4300012: kol|6
+    4300014: Shapka1|7
+    4300016: ten|8
+    4300018: Glaz|9
+    4300020: brov|10
+    4300022: stopa|11
+    4300024: noga|12
+    4300026: Hvost|13
+    4300028: stopa|14
+    4300030: noga|15
+    4300032: telo|16
+    4300034: rukap|17
+    4300036: Rukav|18
+    7400000: Mainline
+    9500000: //RootNode
+    13700000: brov|10
+    13700002: Glaz|9
+    13700004: golova|4
+    13700006: Hvost|13
+    13700008: kol|6
+    13700010: noga|12
+    13700012: noga|15
+    13700014: PALEC|1
+    13700016: rukap 2|0
+    13700018: rukap|17
+    13700020: Rukav|18
+    13700022: Rukav|2
+    13700024: Sapka2|3
+    13700026: Shapka1|7
+    13700028: stopa|11
+    13700030: stopa|14
+    13700032: telo|16
+    13700034: ten|8
+    13700036: Uho|5
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: telo|16
+    rootMotionBoneRotation: {x: -0, y: -0, z: -0.040297084, w: 0.99918777}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

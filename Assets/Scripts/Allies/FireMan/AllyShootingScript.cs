@@ -76,11 +76,14 @@ public class AllyShootingScript : MonoBehaviour {
     }
     void Shoot()
     {
-        GameObject newBullet = Instantiate(bullet, shotPoint.position, shotPoint.rotation) as GameObject;
-        Vector2 direction = enemy.transform.position - newBullet.transform.position;
-        newBullet.GetComponent<Rigidbody2D>().velocity = (direction + new Vector2(Random.Range(-1.3f, 1.3f), Random.Range(-1.3f, 1.3f))).normalized * bulletSpeed;
-        newBullet.GetComponent<BulletScript>().friendly = true;
-        newBullet.GetComponent<BulletScript>().damage = damage;
-        Destroy(newBullet, 2f);
+        if (enemy)
+        {
+            GameObject newBullet = Instantiate(bullet, shotPoint.position, shotPoint.rotation) as GameObject;
+            Destroy(newBullet, 2f);
+            Vector2 direction = enemy.transform.position - newBullet.transform.position;
+            newBullet.GetComponent<Rigidbody2D>().velocity = (direction + new Vector2(Random.Range(-1.3f, 1.3f), Random.Range(-1.3f, 1.3f))).normalized * bulletSpeed;
+            newBullet.GetComponent<BulletScript>().friendly = true;
+            newBullet.GetComponent<BulletScript>().damage = damage;
+        }
     }
 }
