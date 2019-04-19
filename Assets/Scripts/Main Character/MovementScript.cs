@@ -17,11 +17,12 @@ public class MovementScript : MonoBehaviour {
     [SerializeField]
     float SneakSpeed;
     public Joystick joystick;
+    public DragonBones.UnityArmatureComponent animobj;
     int lastBorderState; //0-right,1-right jump,2-jump,3-left jump,4-left,5-left roll,6-down,7-right roll
     float lastBorderTime;
     //[HideInInspector]
     public bool inOtherMovement;
-
+    
     float Ysize;
     [SerializeField]
     bool isSitting;
@@ -36,6 +37,7 @@ public class MovementScript : MonoBehaviour {
         roll = GetComponent<RollScript>();
         sprint = GetComponent<SprintScript>();
         col = GetComponent<CapsuleCollider2D>();
+        //animobj = this.gameObject.GetComponentInChildren<DragonBones.UnityArmatureComponent>();
         Ysize = col.size.y;
         isSitting = false;
         inOtherMovement = false;
@@ -58,6 +60,8 @@ public class MovementScript : MonoBehaviour {
             }
             if (Vector2.Distance(Vector2.zero, axis) > 0.85f) // if joystick in border
             {
+                Debug.Log(axis);
+                
                 if (lastBorderState == state && (Time.time - lastBorderTime) > 0.1f && (Time.time - lastBorderTime) < 0.5f && lastBorderTime != 0) //if double click in same direction
                 {
 
@@ -128,6 +132,12 @@ public class MovementScript : MonoBehaviour {
 
     int BorderState(Vector2 axis)
     {
+        if (axis.x > 0)
+            animobj.armature.flipX = false;
+        else if(axis.x < 0)
+        {
+            animobj.armature.flipX = true;
+        }
         if (Mathf.Abs(axis.y) < 0.35)
         {
             if (axis.x > 0)
