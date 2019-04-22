@@ -7,12 +7,24 @@ public class CameraScript : MonoBehaviour {
 
     bool rightStop, leftStop;
     bool downStop;
+    public DragonBones.UnityArmatureComponent animobj;
     Vector3 offset;
+    Vector3 stopPos;
+    public float speed;
+    public float distance;
+    int offs=1;
+    //public int off
     [SerializeField]
     GameObject player;
     Collider2D collider;
-	void Start ()
+    public Camera camera;
+    public BoxCollider2D boxCollider;
+    void Start ()
     {
+        camera = this.GetComponent<Camera>();
+        boxCollider = this.transform.GetComponent<BoxCollider2D>();
+        //boxCollider.size.Set(camera.aspect * 2f * camera.orthographicSize, 2f * camera.orthographicSize);
+        boxCollider.size = new Vector2(camera.aspect * 2f * camera.orthographicSize, 2f * camera.orthographicSize);
         offset = transform.position - player.transform.position;
         rightStop = false;
         leftStop = false;
@@ -20,11 +32,24 @@ public class CameraScript : MonoBehaviour {
 	
 	void Update ()
     {
-		if(!(rightStop ||leftStop) || (rightStop && player.transform.position.x<transform.position.x) || (leftStop && player.transform.position.x > transform.position.x) )
+        
+
+        
+
+        if (!(rightStop ||leftStop) || (rightStop && transform.position.x- player.transform.position.x>=distance) || (leftStop && player.transform.position.x - transform.position.x>=distance) )
         {
+            //if (rightStop)
+            //    offs = -1;
+            //if (leftStop)
+            //    offs = 1;
             rightStop = false;
             leftStop = false;
-            transform.position =  new Vector3(player.transform.position.x + offset.x,transform.position.y, transform.position.z);
+            if (animobj.armature.flipX)
+                offs = -1;
+            else
+                offs = 1;
+            transform.position=Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + offset.x*offs, transform.position.y, transform.position.z), speed);
+            //transform.position =  new Vector3(player.transform.position.x + offset.x,transform.position.y, transform.position.z);
         }
         if (!downStop)
         {
@@ -47,10 +72,20 @@ public class CameraScript : MonoBehaviour {
     {
         if (col.CompareTag("CamWall"))
         {
-            if (col.transform.position.x > transform.position.x)
+            if (col.transform.position.x >= transform.position.x)
+            {
                 rightStop = true;
-            else if (col.transform.position.x < transform.position.x)
+                Debug.Log("Right Stop");
+
+                //stopPos = transform.position;
+            }
+            else if (col.transform.position.x <= transform.position.x)
+            {
                 leftStop = true;
+                Debug.Log("Left Stop");
+                //stopPos = transform.position;
+                //offset = transform.position + player.transform.position;
+            }
         }
         if (col.CompareTag("CamFloor"))
         {

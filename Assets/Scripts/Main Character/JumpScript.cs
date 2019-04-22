@@ -9,7 +9,7 @@ public class JumpScript : MonoBehaviour {
     Animator anim;
     [SerializeField]
     LayerMask mask;
-    bool isGrounded;
+    public bool isGrounded;
     [SerializeField]
     int jumpPower;
     [Header("X/Y ratio")]
@@ -17,6 +17,7 @@ public class JumpScript : MonoBehaviour {
     Vector2 JumpDirection;
     [SerializeField]
     Transform legs;
+    public float RayLen;
 
 	void Start ()
     {
@@ -29,11 +30,15 @@ public class JumpScript : MonoBehaviour {
 
 	void FixedUpdate ()
     {
+
         if(!isGrounded)
         {
-            RaycastHit2D hit = Physics2D.Raycast(legs.position, Vector2.down, 0.3f,mask.value);
+            //Debug.DrawLine(legs.position, Vector2.down, Color.red, RayLen);
+            RaycastHit2D hit = Physics2D.Raycast(legs.position, Vector2.down, RayLen, mask.value);
             if (hit)
             {
+                Debug.DrawLine(legs.position, hit.transform.position, Color.red);
+                //Debug.Log("Grounded");
                 isGrounded = true;
                 mov.inOtherMovement = false;
             }
@@ -44,8 +49,8 @@ public class JumpScript : MonoBehaviour {
     public void StartJump(int state) //1-up and rigth, 2- up, 3-up and left
     {
         rb.velocity = Vector2.zero; //???
-        RaycastHit2D hit = Physics2D.Raycast(legs.position, Vector2.down, 0.3f, LayerMask.GetMask("Stairs"));
-        if (!hit)
+        //RaycastHit2D hit = Physics2D.Raycast(legs.position, Vector2.down, RayLen, mask.value);
+        if (isGrounded)
         {
             if (state == 2)
             {
@@ -64,7 +69,7 @@ public class JumpScript : MonoBehaviour {
                 rb.AddForce(JumpDirection * new Vector2(-1, 1) * jumpPower);
             }
 
-            Invoke("ChangeGround", 0.3f);
+            Invoke("ChangeGround", 0.8f);
         }
         else mov.inOtherMovement = false;
     }
