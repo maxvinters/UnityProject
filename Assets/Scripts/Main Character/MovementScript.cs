@@ -120,8 +120,13 @@ public class MovementScript : MonoBehaviour {
             }
 
             if (!isSitting)
+            {
+
                 rb.velocity = new Vector2(axis.x * Speed, rb.velocity.y);
-            if(isSitting && (state == 5 || state == 7))
+                //rb.AddForce(new Vector2(axis.x * Speed, rb.velocity.y));
+                //transform.Translate(new Vector3(axis.x * Speed*0.01f, rb.velocity.y, 0));
+            }
+            if (isSitting && (state == 5 || state == 7))
                 rb.velocity = new Vector2(axis.x * SneakSpeed, rb.velocity.y);
         }
 

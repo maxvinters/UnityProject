@@ -68,6 +68,7 @@
     <Compile Include="Assets\DragonBones\Editor\ShowSlotsWindow.cs" />
     <Compile Include="Assets\DragonBones\Editor\UnityArmatureEditor.cs" />
     <Compile Include="Assets\DragonBones\Editor\UnityEditor.cs" />
+    <Compile Include="Assets\ZSmartTile\Editor\ZST_Editor.cs" />
     <None Include="Assets\codeandweb.com\Editor\SettingsTexturePackerImporter.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>A:/Projects/Game/UnityProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

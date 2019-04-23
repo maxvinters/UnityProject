@@ -157,6 +157,9 @@
     <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\ZSmartTile\Classes\ZST_MapManager.cs" />
+    <Compile Include="Assets\ZSmartTile\Components\ZST_SmartTile.cs" />
+    <Compile Include="Assets\ZSmartTile\Components\ZST_SnapToGrid.cs" />
     <None Include="Assets\DragonBones\Resources\Shaders\DB_BlendMode_Grab.shader" />
     <None Include="Assets\DragonBones\Resources\Shaders\DB_BlendMode_UIGrab.shader" />
     <None Include="Assets\DragonBones\Demos\Scripts\LightTestShader.shader" />
