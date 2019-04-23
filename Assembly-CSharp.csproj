@@ -138,6 +138,7 @@
     <Compile Include="Assets\Scripts\Environment\CoverScript.cs" />
     <Compile Include="Assets\Scripts\Environment\DarknessScript.cs" />
     <Compile Include="Assets\Scripts\Environment\EnvShadowScript.cs" />
+    <Compile Include="Assets\Scripts\Environment\LightBlink.cs" />
     <Compile Include="Assets\Scripts\Main Character\AlarmScript.cs" />
     <Compile Include="Assets\Scripts\Main Character\CliffScript.cs" />
     <Compile Include="Assets\Scripts\Main Character\JumpScript.cs" />
